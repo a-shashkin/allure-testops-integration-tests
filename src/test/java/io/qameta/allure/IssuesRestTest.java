@@ -6,7 +6,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 @Layer("rest")
-@Owner("baev")
+@Owner("allure8")
 @Feature("Issues")
 public class IssuesRestTest {
 
@@ -19,8 +19,9 @@ public class IssuesRestTest {
     @Story("Create new issue")
     @Microservice("Billing")
     @Tags({@Tag("api"), @Tag("smoke")})
-    @ParameterizedTest(name = "Create issue via api")
+    @ParameterizedTest(name = "Create issue via API")
     @ValueSource(strings = {"First Note", "Second Note"})
+    @AllureId("13692")
     public void shouldCreateUserNote(@Param(value = "Title") String title) {
         steps.createIssueWithTitle(OWNER, REPO, title);
         steps.shouldSeeIssueWithTitle(OWNER, REPO, title);
@@ -31,8 +32,9 @@ public class IssuesRestTest {
     @Microservice("Repository")
     @Tags({@Tag("web"), @Tag("regress")})
     @JiraIssues({@JiraIssue("AE-1")})
-    @ParameterizedTest(name = "Close issue via api")
+    @ParameterizedTest(name = "Close issue via API")
     @ValueSource(strings = {"First Note", "Second Note"})
+    @AllureId("13689")
     public void shouldDeleteUserNote(@Param(value = "Title") String title) {
         steps.createIssueWithTitle(OWNER, REPO, title);
         steps.closeIssueWithTitle(OWNER, REPO, title);

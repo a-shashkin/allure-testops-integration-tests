@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
  * @author eroshenkoam (Artem Eroshenko).
  */
 @Layer("web")
-@Owner("eroshenkoam")
+@Owner("allure8")
 @Feature("Pull Requests")
 public class PullRequestsWebTest {
 
@@ -34,6 +34,7 @@ public class PullRequestsWebTest {
     @Tags({@Tag("web"), @Tag("regress"), @Tag("smoke")})
     @JiraIssues({@JiraIssue("AE-1"), @JiraIssue("AE-2")})
     @DisplayName("Creating new issue for authorized user")
+    @AllureId("13695")
     public void shouldCreatePullRequest() {
         steps.openPullRequestsPage(OWNER, REPO);
         steps.createPullRequestFromBranch(BRANCH);
@@ -47,6 +48,7 @@ public class PullRequestsWebTest {
     @Story("Close existing pull request")
     @Tags({@Tag("web"), @Tag("regress")})
     @DisplayName("Deleting existing issue for authorized user")
+    @AllureId("13694")
     public void shouldClosePullRequest() {
         steps.openPullRequestsPage(OWNER, REPO);
         steps.createPullRequestFromBranch(BRANCH);

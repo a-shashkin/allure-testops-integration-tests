@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
  * @author eroshenkoam (Artem Eroshenko).
  */
 @Layer("web")
-@Owner("eroshenkoam")
+@Owner("allure8")
 @Feature("Issues")
 public class IssuesWebTest {
 
@@ -34,6 +34,7 @@ public class IssuesWebTest {
     @JiraIssues({@JiraIssue("AE-2")})
     @Tags({@Tag("web"), @Tag("critical")})
     @DisplayName("Creating new issue authorized user")
+    @AllureId("13693")
     public void shouldCreateIssue() {
         steps.openIssuesPage(OWNER, REPO);
         steps.createIssueWithTitle(ISSUE_TITLE);
@@ -47,6 +48,7 @@ public class IssuesWebTest {
     @Tags({@Tag("web"), @Tag("regress")})
     @JiraIssues({@JiraIssue("AE-1")})
     @DisplayName("Adding note to advertisement")
+    @AllureId("13691")
     public void shouldAddLabelToIssue() {
         steps.openIssuesPage(OWNER, REPO);
         steps.createIssueWithTitle(ISSUE_TITLE);
@@ -60,6 +62,7 @@ public class IssuesWebTest {
     @Tags({@Tag("web"), @Tag("regress")})
     @JiraIssues({@JiraIssue("AE-1")})
     @DisplayName("Closing new issue for authorized user")
+    @AllureId("13690")
     public void shouldCloseIssue() {
         steps.openIssuesPage(OWNER, REPO);
         steps.createIssueWithTitle(ISSUE_TITLE);

@@ -28,13 +28,13 @@ public class IssuesWebTest {
     }
 
     @Test
+    @AllureId("13693")
     @TM4J("AE-T3")
     @Microservice("Billing")
     @Story("Create new issue")
     @JiraIssues({@JiraIssue("AE-2")})
     @Tags({@Tag("web"), @Tag("critical")})
     @DisplayName("Creating new issue authorized user")
-    @AllureId("13693")
     public void shouldCreateIssue() {
         steps.openIssuesPage(OWNER, REPO);
         steps.createIssueWithTitle(ISSUE_TITLE);
@@ -42,13 +42,13 @@ public class IssuesWebTest {
     }
 
     @Test
+    @AllureId("13691")
     @TM4J("AE-T4")
     @Microservice("Repository")
     @Story("Create new issue")
     @Tags({@Tag("web"), @Tag("regress")})
-    @JiraIssues({@JiraIssue("AE-1")})
+    @JiraIssues({@JiraIssue("HOMEWORK-479")})
     @DisplayName("Adding note to advertisement")
-    @AllureId("13691")
     public void shouldAddLabelToIssue() {
         steps.openIssuesPage(OWNER, REPO);
         steps.createIssueWithTitle(ISSUE_TITLE);
@@ -56,13 +56,13 @@ public class IssuesWebTest {
     }
 
     @Test
+    @AllureId("13690")
     @TM4J("AE-T5")
     @Microservice("Repository")
     @Story("Close existing issue")
     @Tags({@Tag("web"), @Tag("regress")})
-    @JiraIssues({@JiraIssue("AE-1")})
+    @JiraIssues({@JiraIssue("HOMEWORK-479")})
     @DisplayName("Closing new issue for authorized user")
-    @AllureId("13690")
     public void shouldCloseIssue() {
         steps.openIssuesPage(OWNER, REPO);
         steps.createIssueWithTitle(ISSUE_TITLE);

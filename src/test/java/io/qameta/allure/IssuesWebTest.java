@@ -32,7 +32,7 @@ public class IssuesWebTest {
     @TM4J("AE-T3")
     @Microservice("Billing")
     @Story("Create new issue")
-    @JiraIssues({@JiraIssue("AE-2")})
+    @JiraIssues({@JiraIssue("HOMEWORK-479")})
     @Tags({@Tag("web"), @Tag("critical")})
     @DisplayName("Creating new issue authorized user")
     public void shouldCreateIssue() {
